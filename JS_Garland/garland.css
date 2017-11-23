@@ -1,0 +1,76 @@
+
+html
+{
+	
+    height:100%;
+}
+
+body
+{
+	margin:0;
+	height:100%;
+   font-size: 0;
+   padding: 50px;
+}
+
+
+
+.bulb
+{
+
+width:80px;
+height: 100px;
+background-image: url('lamp.png');
+background-size: cover;
+margin: 0px;
+
+display: inline-block;
+padding: 0;
+
+}
+
+.color_bulb
+{
+width:80px;
+height: 100px;
+margin: 0;
+display: none;
+}
+
+.lamp1
+{
+
+background-image: url('lampblue.png');
+background-size: cover;
+
+}
+
+
+
+.lamp2
+{
+
+background-image: url('lampgreen.png');
+background-size: cover;
+
+}
+
+
+
+.lamp3
+{
+
+background-image: url('lamppink.png');
+background-size: cover;
+}
+
+
+
+.lamp4
+{
+
+background-image: url('lampyellow.png');
+background-size: cover;
+}
+
+.

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="JS_Coloring_DIV.css">
+</head>
+
+<body>
+
+<div  id ="screen" class="screen">Choose your color</div>
+<input id ="btn1" type="button" class="block red" ></input>
+<input id ="btn2" type="button" class="block green" ></input>
+<input id ="btn3" type="button" class="block blue" ></input>
+<input id ="btn4" type="button" class="block yellow" ></input>
+<input id ="btn5" type="button" class="block pink" ></input>
+<div  class="no_color" ></div>
+<input id ="btn0" value="NO COLOR" type="button" class="btn0" ></input>
+
+<script> 
+
+var screen = document.getElementById("screen");
+
+window.onclick = function() { 
+   
+   var id=event.target.id;
+
+	if (event.target.id == 'btn1')
+		screen.style.backgroundColor='red';
+
+	else if (event.target.id == 'btn2')
+		screen.style.backgroundColor='green';
+
+	else if (event.target.id == 'btn3')
+		screen.style.backgroundColor='blue';
+
+	else if (event.target.id == 'btn4')
+		screen.style.backgroundColor='yellow';
+
+	else if (event.target.id == 'btn5')
+		screen.style.backgroundColor='pink';
+   
+	else if (event.target.id == 'btn0')
+		screen.style.backgroundColor='grey';
+}
+</script>
+</body>
+</html>

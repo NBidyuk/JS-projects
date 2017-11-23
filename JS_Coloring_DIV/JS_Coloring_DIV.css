@@ -1,0 +1,70 @@
+
+
+.screen
+{
+
+width:800px;
+height: 200px;
+background-color: grey;
+margin:20px;
+	text-align: center;
+	padding-top: 100px;
+display: block;
+color:white;
+font-size: 30px;
+}
+
+.btn0
+{
+
+	width: 450px;
+	height: 40px;
+	background-color:grey;
+	color:white;
+font-size: 20px;
+margin-left: 190px;
+}
+
+
+
+.block
+{
+
+	width:120px;
+	height: 120px;
+	margin:22px;
+	display: inline-block;
+
+}
+
+.no_color
+{
+	background-color: transparent;
+display: block;}
+
+.red
+{
+	background-color: red;}
+
+	
+.green
+{
+	background-color: green;}
+
+
+	
+.yellow
+{
+	background-color: yellow;}
+
+
+	
+.blue
+{
+	background-color: blue;}
+
+
+	
+.pink
+{
+	background-color: pink;}

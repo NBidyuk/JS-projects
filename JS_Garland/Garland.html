@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<link rel="stylesheet"  type= "text/css"  href="garland.css">
+
+</head>
+<body>
+<div id="b1" class="bulb">
+	<div id="lamp1" class="color_bulb lamp1"></div>
+</div>
+<div id="b2" class="bulb">
+	<div id="lamp2" class="color_bulb lamp2"></div>
+</div>
+<div id="b3" class="bulb">
+	<div id="lamp3" class="color_bulb lamp3"></div>
+</div>
+<div id="b4" class="bulb">
+	<div id="lamp4" class="color_bulb lamp4"></div>
+</div>
+<div id="b1" class="bulb">
+	<div id="lamp5" class="color_bulb lamp1"></div>
+</div>
+<div id="b2" class="bulb">
+	<div id="lamp6" class="color_bulb lamp2"></div>
+</div>
+<div id="b3" class="bulb">
+	<div id="lamp7" class="color_bulb lamp3"></div>
+</div>
+<div id="b4" class="bulb">
+	<div id="lamp8" class="color_bulb lamp4"></div>
+</div>
+<br/>
+<button onclick="start();" style="margin: 30px">ON</button>
+<button onclick="pause();" style="margin: 30px">PAUSE</button>
+<button onclick="stop();" style="margin: 30px">OFF</button>
+<select id="select" onchange="changeMode();">Choose а mode
+  <option value="mode1">Line mode</option>
+  <option value="mode2">Light mode</option>
+  <option value="mode3">Blinking mode</option>
+  <option value="mode4">Back-Front mode</option>
+</select>
+<script>
+var x=0;
+var id;
+var id2;
+var y =1;
+
+var z=9;
+var Repeat;
+var working = false;
+var e = document.getElementById("select");
+
+
+
+
+
+function show(id) {
+  document.getElementById(id).style.display = 'inline-block';
+}
+
+function hide(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+function colorChange() {
+id='lamp'+x;
+if(x!=0)
+hide(id);
+if(x==8)
+	x=0;
+x++;
+id='lamp'+x;
+show(id);
+}
+
+
+function light() {
+		x=1;
+    while (x<=8) {
+        id='lamp'+x;
+        show(id);
+        x++;}
+     }
+
+
+
+function blink() {
+
+
+	if (y%2==0)
+	{x=1;
+    while (x<=8) {
+      id='lamp'+x;
+      show(id);
+      x++;}}
+    else
+	{x=1;
+    while (x<=8) {
+      id='lamp'+x;
+      hide(id);
+      x++;}}
+y++;
+}
+
+function byTwo ()
+{
+/*id='lamp'+x;
+id2='lamp'+z;*/
+if(x>0 && z<9)
+{hide(id);
+hide(id2);}
+if(x==4 && z==5) {
+	x=0; z=9;
+}
+x++;
+z--;
+id='lamp'+x;
+id2='lamp'+z;
+show(id);
+show(id2);
+
+}
+
+
+
+
+function changeMode()
+{
+	if(working==true) 
+		{stop();
+		start();}
+     
+   };
+
+function start() {
+	if(working==false) { 
+		
+		switch (e.options[e.selectedIndex].value) {
+			case 'mode1':
+            Repeat=setInterval(colorChange,500);
+            break;
+            case 'mode2':
+            
+            Repeat = light();
+            break;
+
+
+            case 'mode3':
+             Repeat = setInterval(blink,500);
+            break;
+
+              case 'mode4':
+             Repeat = setInterval(byTwo,500);
+            break;
+        }
+
+        
+    
+
+    working=true;
+    }
+    else
+    	alert("The garland is ON!");
+};
+
+function pause() {
+	if(working==true)
+    {clearInterval(Repeat);
+    working=false;
+   }
+    else
+    	alert("Switch on the garland first!");
+};
+
+function stop() {
+    
+	x=1;
+    while (x<=8) {
+      id='lamp'+x;
+      hide(id);
+      x++;}
+    working=false;
+    clearInterval(Repeat);
+   
+    Repeat=null;
+    x=0;
+    y=0;
+    z=9;
+};
+
+
+
+
+
+</script>
+</body>
+</html>
